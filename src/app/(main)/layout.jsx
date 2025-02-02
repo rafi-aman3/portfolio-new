@@ -12,7 +12,17 @@ export default function RootLayout({ children }) {
 	return (
 		<html className={`${lora.variable}`}>
 			<body>
-				<main className='h-screen w-full bg-slate-300 p-4'>{children}</main>
+				<main className='h-screen w-full bg-background p-4'>
+					<div className='h-full w-full md:overflow-hidden overflow-auto no-scrollbar'>
+						<div className='h-full w-full'>
+							<div className='h-min lg:h-[calc(100vh-32px)] md:h-full w-full overflow-auto md:space-y-4'>
+								<div className='w-full h-full md:grid space-y-2 md:space-y-0  md:grid-rows-10 md:grid-cols-12 lg:grid-cols-12 gap-4'>
+									{children}
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
 			</body>
 		</html>
 	);
