@@ -13,7 +13,9 @@ export default function Page() {
 			<Summary />
 			<ProfileImage />
 			<ProjectContainer />
+
 			<OtherSection />
+
 			<Experience />
 			<Footer />
 		</>
