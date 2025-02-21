@@ -1,7 +1,21 @@
 "use client";
 import { commands } from "@/config/commands";
 import React from "react";
-import { ReactTerminal, TerminalContextProvider } from "react-terminal";
+import dynamic from "next/dynamic";
+
+const ReactTerminal = dynamic(
+	() => import("react-terminal").then((mod) => mod.ReactTerminal),
+	{
+		ssr: false,
+	}
+);
+
+const TerminalContextProvider = dynamic(
+	() => import("react-terminal").then((mod) => mod.TerminalContextProvider),
+	{
+		ssr: false,
+	}
+);
 
 export const OtherSection = () => {
 	const WelcomeMessage = () => {
@@ -14,8 +28,8 @@ export const OtherSection = () => {
 	};
 
 	return (
-		<TerminalContextProvider>
-			<div className='w-full h-full rounded-xl md:row-span-5 md:col-span-6  lg:row-span-5 lg:col-span-5  '>
+		<div className='w-full h-full rounded-xl md:row-span-5 md:col-span-6  lg:row-span-5 lg:col-span-5  '>
+			<TerminalContextProvider>
 				<ReactTerminal
 					welcomeMessage={<WelcomeMessage />}
 					prompt='rafi@portfolio:~$'
@@ -28,7 +42,7 @@ export const OtherSection = () => {
 					commands={commands}
 					showControlBar={false}
 				/>
-			</div>
-		</TerminalContextProvider>
+			</TerminalContextProvider>
+		</div>
 	);
 };
