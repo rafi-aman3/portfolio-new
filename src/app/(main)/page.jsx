@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { OtherSection } from "@/components/other-section";
 import { ProfileImage } from "@/components/profile-image";
-import { ProjectContainer } from "@/components/project-container";
+import { ProjectSection } from "@/components/project-container";
 import { Summary } from "@/components/summary";
 
 export default function Page() {
@@ -12,10 +12,8 @@ export default function Page() {
 			<Header />
 			<Summary />
 			<ProfileImage />
-			<ProjectContainer />
-
+			<ProjectSection />
 			<OtherSection />
-
 			<Experience />
 			<Footer />
 		</>

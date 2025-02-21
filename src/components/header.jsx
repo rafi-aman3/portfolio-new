@@ -1,5 +1,6 @@
 import { Download } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const Header = () => {
 	return (
@@ -7,7 +8,7 @@ export const Header = () => {
 			<div className='h-full flex items-center px-8 justify-between'>
 				<div className=' font-serif text-body-md py-4 md:py-0 md:text-md font-semibold text-background '>
 					<div
-						className='box text-lg font-bold text-primary'
+						className='box text-3xl font-bold text-primary'
 						style={{
 							opacity: 1,
 							willChange: "auto",
@@ -25,10 +26,17 @@ export const Header = () => {
 						</div> */}
 					</div>
 					<div className='-translate-y-1'>
-						<Button className='text-foreground'>
-							<Download />
-							Download CV
-						</Button>
+						<Link
+							target='_blank'
+							href={
+								"https://drive.google.com/file/d/134_e5xeVS8CIigjFttF_Aih5_EyIDTfD/view?usp=sharing"
+							}
+						>
+							<Button className='text-foreground'>
+								<Download />
+								Download CV
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</div>
