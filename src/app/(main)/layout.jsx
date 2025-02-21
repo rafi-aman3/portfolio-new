@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Lora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const lora = Lora({
 	subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
 							<div className='h-min lg:h-[calc(100vh-32px)] md:h-full w-full overflow-auto md:space-y-4'>
 								<div className='w-full h-full md:grid space-y-2 md:space-y-0  md:grid-rows-10 md:grid-cols-12 lg:grid-cols-12 gap-4'>
 									{children}
+									<Analytics />
 								</div>
 							</div>
 						</div>
