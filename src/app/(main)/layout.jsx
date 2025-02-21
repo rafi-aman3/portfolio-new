@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Lora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const lora = Lora({
 	subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
 								<div className='w-full h-full md:grid space-y-2 md:space-y-0  md:grid-rows-10 md:grid-cols-12 lg:grid-cols-12 gap-4'>
 									{children}
 									<Analytics />
+									<SpeedInsights />
 								</div>
 							</div>
 						</div>
